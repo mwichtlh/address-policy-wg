@@ -14,6 +14,7 @@ Distribution of peering LAN sizes
 This analysis shows the distribution of current peering LAN prefix sizes.
 
 ![peering LAN prefix size distribution](peering_lan_prefix_size.png)
+
 (Figure 1)
 
 <!---
@@ -37,13 +38,14 @@ Corresponding data:
 ```
 -->
 
-Theoretical minimum peering LAN sizes/IXP
+Theoretical minimum peering LAN size/IXP
 -----------------------------------------
 
 This analysis shows which fraction of IXPs in peeringDB would theoretically fit into a /27, /26, ..., /21. It is based
 on the assumption that an IXP operator requires 2 times the number of connected ASes IPs to operate a peering LAN.
 
 ![peering LAN prefix size distribution](required_ips_per_ixp.png)
+
 (Figure 2)
 
 <!---
@@ -66,16 +68,16 @@ on the assumption that an IXP operator requires 2 times the number of connected 
 Implications on lower bound of allocation
 -----------------------------------------
 
-Already today, more than 10% of the peering LANs are operated with a network smaller or equal a /25 (Figure 1). Roughly
-83% of all IXPs would theoretically fit into a /25 (see Figure 2). Thus it makes sense to move to /25 assignments.
- 
-The current policy of assigning /24s by default has caused a lot of unused space as 74% of all peering LANs are operated 
-with /24s (Figure 1), but the vast majority (83%) of IXPs cannot even utilize a /25 even when including 100% 
-overprovisioning (Figure 2).
+Roughly 83% of all IXPs would theoretically fit into a /25 (Figure 2). This already includes 100% overprovisioning, i.e., 
+2xconnected ASes/IXP. At the same time, 74% of all peering LANs are /24s (Figure 1). Consequently, the default policy 
+of assigning /24s has created large amounts of unused space.
+
+Already today, more than 10% of the peering LANs are operated with a network smaller or equal a /25. Having small 
+peering LANs is not entirely unusual.
 
 Implications on upper bound of allocation
 -----------------------------------------
 
-Large IXPs requiring a /23 or larger are very rare (<3%) (see Table 2). Thus, lowering the upper bound for assignments 
+Large IXPs requiring a /23 or larger are very rare (<3%) (Figure 2). Thus, lowering the upper bound for assignments 
 will not save large amounts of space. Large allocations should still be possible but should be thoroughly checked by 
 RIPE. Due to the small number of large IXPs, the workload will obviously not be high for RIPE (Figure 1/2).

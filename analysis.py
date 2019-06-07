@@ -154,7 +154,7 @@ peers_abs_cum = np.cumsum(peers_abs)
 peers_rel = ["%.2f%%" % (i * 100.0) for i in np.true_divide(peers_abs, peers_abs.sum())]
 peers_rel_cum = ["%.2f%%" % (i * 100.0) for i in np.true_divide(peers_abs_cum, peers_abs.sum())]
 
-# Create a pandas data frame for nice table formatting
+# Create and print a table
 table_data = {
     "# req. IPs/IXP": sizes,
     "min. prefix size": pref_sizes,

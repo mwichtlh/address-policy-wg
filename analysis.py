@@ -60,11 +60,11 @@ plt.text(19.5, 420, "Methodology:\n"
                     "- Peering LAN prefix sizes from\n"
                     "peeringdb.com (https://www.\n"
                     "peeringdb.com/api/ixlan?depth=2)\n"
-                    "- Data as of June 3rd 2019\n"
-                    "- Data set includes 726 peering\nLAN prefixes from 672 IXPs",
+                    "- Data as of Oct 26 2022\n"
+                    "- Data set includes 1014 peering\nLAN prefixes from 951 IXPs",
                     horizontalalignment='left', size='x-small', color='black',
                     bbox=dict(facecolor='white', edgecolor='black', pad=5.0))
-plt.annotate("~10% of all existing IXP\npeering LANs are smaller\nor equal /25.",
+plt.annotate("~12.03% of all existing IXP\npeering LANs are smaller\nor equal /25.",
              xy=(25, 10), xytext=(26.5, 100), fontsize="small", arrowprops=dict(arrowstyle="->"),
              horizontalalignment='center')
 plt.annotate("",
@@ -106,16 +106,16 @@ print(tabulate(table_data, headers='keys', tablefmt='psql'))
 asns_doubled = [a * 2 for a in asns]
 ax = sns.distplot(asns_doubled, bins=range(1, max(asns_doubled), 1),
                   kde=False, hist_kws=dict(cumulative=True, density=True))
-plt.annotate("83.63% of all IXPs would fit into a /25\nincluding 100% overprovisioning.",
+plt.annotate("82.02% of all IXPs would fit into a /25\nincluding 100% overprovisioning.",
              xy=(128, 0.83), xytext=(68, 0.6), fontsize="small", arrowprops=dict(arrowstyle="->"))
-plt.annotate("71.73% of all IXPs would fit into a /26\nincluding 100% overprovisioning.",
+plt.annotate("71.71% of all IXPs would fit into a /26\nincluding 100% overprovisioning.",
              xy=(64, 0.71), xytext=(17, 0.9), fontsize="small", arrowprops=dict(arrowstyle="->"))
-plt.annotate("<3% of all IXPs require /23 or larger\nincluding 100% overprovisioning.",
+plt.annotate("<4% of all IXPs require /23 or larger\nincluding 100% overprovisioning.",
              xy=(512, 0.97), xytext=(260, 0.8), fontsize="small", arrowprops=dict(arrowstyle="->"))
 plt.text(128, 0.1, "Methodology:\n"
                    "- AS set sizes from peeringdb.com\n(https://www.peeringdb.com/api/ixlan?depth=2)\n"
-                   "- Data as of June 3rd 2019\n"
-                   "- Data set includes 672 IXPs\n"
+                   "- Data as of Oct 26 2022\n"
+                   "- Data set includes 951 IXPs\n"
                    "- Required IPs is assumed to be twice the size of IXP's AS set\n"
                    "- Note logarithmic x axis",
                    horizontalalignment='left', size='x-small', color='black',

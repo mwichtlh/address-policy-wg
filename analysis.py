@@ -126,10 +126,10 @@ plt.xscale("log", basex=2)
 plt.title("CDF of required IPs per IXP")
 plt.xlabel("# required IPs\n(=2xASes/IXP, i.e., including 100% overprovisioning)")
 plt.ylabel("IXPs with less than x required IPs [%] (CDF)")
-xticks = [pow(2, x) for x in range(5, 12)]
-xtick_labels = ["%i\n(/%i)" % (pow(2, x), 32-x) for x in range(5, 12)]
+xticks = [pow(2, x) for x in range(3, 12)]
+xtick_labels = ["%i\n(/%i)" % (pow(2, x), 32-x) for x in range(3, 12)]
 plt.xticks(xticks, xtick_labels)
-for i in [pow(2, x) for x in range(5, 12)]:
+for i in [pow(2, x) for x in range(3, 12)]:
     plt.axvline(i, linestyle="--", color="k", linewidth=0.5)
 plt.yticks(np.arange(0.0, 1.1, 0.1), np.arange(0, 110, 10))
 plt.tight_layout()
